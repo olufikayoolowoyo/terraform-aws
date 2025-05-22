@@ -3,6 +3,6 @@ module "s3_bucket" {
   bucket_name = "${var.bucket_name}-${var.environment}"
   acl        = var.acl
   tags       = merge(var.tags, {
-    Environment = var.environment
+    Branch      = "terraform-env-infra"
   })
 }

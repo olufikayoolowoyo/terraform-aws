@@ -16,12 +16,11 @@ variable "tags" {
   type        = map(string)
   default     = {
     Environment = "staging"
-    Branch      = "terraform-env-infra"
     Project     = "terraform-aws"
   }
 }
 variable "environment" {
   description = "The environment for the deployment (e.g., dev, prod)"
   type        = string
-  default     = "dev"
+  default     = "staging"
 }
