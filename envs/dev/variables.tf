@@ -16,7 +16,8 @@ variable "tags" {
   type        = map(string)
   default     = {
     Environment = "dev"
-    Project     = "terraform-bootstrap"
+    Branch      = "terraform-env-infra"
+    Project     = "terraform-aws"
   }
 }
 variable "environment" {
