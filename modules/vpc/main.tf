@@ -1,17 +1,16 @@
 
+# Creates a VPC with DNS support and custom CIDR block
 resource "aws_vpc" "this" {
-    
     cidr_block = var.vpc_cidr
     enable_dns_hostnames = true
     enable_dns_support   = true
 
-    tags      = merge(var.tags, {
-
-    Name = "${var.env}-vpc"
-
-  })
+    tags = merge(var.tags, {
+      Name = "${var.env}-vpc"
+    })
 }
 
+# Creates an internet gateway and attaches it to the VPC
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 
@@ -20,6 +19,7 @@ resource "aws_internet_gateway" "this" {
   })
 }
 
+# Creates public subnets in multiple AZs with auto-assigned public IPs
 resource "aws_subnet" "public" {
   count             = length(var.public_subnet_cidrs)
   vpc_id            = aws_vpc.this.id
@@ -33,6 +33,7 @@ resource "aws_subnet" "public" {
   }
 }
 
+# Creates private subnets in multiple AZs without public IP assignment
 resource "aws_subnet" "private" {
   count             = length(var.private_subnet_cidrs)
   vpc_id            = aws_vpc.this.id
@@ -43,3 +44,4 @@ resource "aws_subnet" "private" {
     Name = "${var.env}-private-subnet-${count.index + 1}"
   }
 }
+   
