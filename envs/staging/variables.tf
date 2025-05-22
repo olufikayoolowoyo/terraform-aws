@@ -2,7 +2,7 @@
 variable "bucket_name" {
     description = "Name of the S3 bucket"
     type        = string
-    default     = "tf-bootstrap-dev"
+    default     = "tf-bootstrap-staging"
 }
 
 variable "acl" {
@@ -15,13 +15,12 @@ variable "tags" {
   description = "Tags for the bucket"
   type        = map(string)
   default     = {
-    Environment = "dev"
-    Branch      = "terraform-env-infra"
+    Environment = "staging"
     Project     = "terraform-aws"
   }
 }
 variable "environment" {
   description = "The environment for the deployment (e.g., dev, prod)"
   type        = string
-  default     = "dev"
+  default     = "staging"
 }

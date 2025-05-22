@@ -1,14 +1,18 @@
-# AWS Terraform Bootstrap Project
+# AWS Terraform Environment-Split Infrastructure
 
-## 🚀 Project Overview
+## 🌍 Overview
 
-This is the foundational project for a series of Terraform-based AWS infrastructure deployments. It provisions a single AWS S3 bucket using a modular structure and sets up a scalable directory layout for future multi-environment use.
+This project extends the `aws-terraform-bootstrap` project by introducing:
 
-## 🧱 Structure
+- Remote state management using AWS S3.
+- Support for multiple environments (`dev`, `staging`) with isolated state.
+- A reusable S3 module as an infrastructure example.
+
+## 📂 Structure
 
 ```bash
-.
-├── modules/          # Reusable Terraform modules
-│   └── s3/           # Basic S3 module
-├── envs/             # Environment-specific configs
-│   └── dev/          # Dev environment for initial testing
+modules/           # Reusable modules
+envs/              # Environment-specific configurations
+  ├── dev/         # Dev environment setup
+  └── staging/     # Staging environment setup
+
