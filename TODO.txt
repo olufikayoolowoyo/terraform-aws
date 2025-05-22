@@ -1,0 +1,4 @@
+1. Create a reusable VPC networking Layer
+    1a. Enable Multi-AZ support
+    1b. Environment Isolation
+
