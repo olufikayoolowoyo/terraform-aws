@@ -1,16 +1,14 @@
-# my-empty-tf-infra
+# AWS Terraform Bootstrap Project
 
-Terraform project scaffold with modular structure and separate environments.
+## 🚀 Project Overview
 
-## Layout
+This is the foundational project for a series of Terraform-based AWS infrastructure deployments. It provisions a single AWS S3 bucket using a modular structure and sets up a scalable directory layout for future multi-environment use.
 
-- \modules/\: Reusable infrastructure modules (placeholders)
-- \envs/\: Environment-specific configurations
-- \globals/\: Shared provider/backend config (optional)
-- \scripts/\: Helper scripts (init/apply/etc.)
+## 🧱 Structure
 
-## Next Steps
-
-- Implement resources inside \modules/\
-- Configure your remote state backend (e.g. create the S3 bucket and DynamoDB table)
-- Fill in environment-specific configurations
+```bash
+.
+├── modules/          # Reusable Terraform modules
+│   └── s3/           # Basic S3 module
+├── envs/             # Environment-specific configs
+│   └── dev/          # Dev environment for initial testing
