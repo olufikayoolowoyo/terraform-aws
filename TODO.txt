@@ -1,8 +1,4 @@
-1. Create a reusable VPC networking Layer
-    1a. Enable Multi-AZ support - Done
-    1b. Environment Isolation - Done
+1. Compute layer using EC2 instances 
+2. Behind an Application Load Balancer (ALB). 
+3. Uses Auto Scaling Groups, and Security Groups.
 
-Next -
-    Add NAT gateways and route tables
-
-    Secure networking with SGs and NACLs
