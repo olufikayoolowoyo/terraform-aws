@@ -1,0 +1,8 @@
+1. Create a reusable VPC networking Layer
+    1a. Enable Multi-AZ support - Done
+    1b. Environment Isolation - Done
+
+Next -
+    Add NAT gateways and route tables
+
+    Secure networking with SGs and NACLs
