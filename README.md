@@ -12,6 +12,8 @@ This project extends the `aws-terraform-bootstrap` project by introducing:
 
 ```bash
 modules/           # Reusable modules
+  |── s3           # S3 Bucket
+  |── vpc          # VPC Module
 envs/              # Environment-specific configurations
   ├── dev/         # Dev environment setup
   └── staging/     # Staging environment setup
