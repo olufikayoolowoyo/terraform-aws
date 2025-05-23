@@ -15,4 +15,20 @@ modules/           # Reusable modules
 envs/              # Environment-specific configurations
   ├── dev/         # Dev environment setup
   └── staging/     # Staging environment setup
+  
+## ☁️ Features
+
+- Environment-tagged VPCs
+- Subnet splitting for high availability
+- Outputs for downstream usage (e.g., ECS, RDS)
+
+## 🏗️ Deploy
+
+```bash
+cd envs/dev
+terraform init -backend-config="backend.tfvars"
+terraform plan -var-file="terraform.tfvars"
+terraform apply -var-file="terraform.tfvars"
+
+
 
