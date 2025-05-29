@@ -25,3 +25,18 @@ module "alb" {
   sg_alb_id         = module.sg.alb_id
   tags              = var.tags
 }
+
+module "asg" {
+  source              = "../../modules/ec2-asg"
+  env                 = "dev"
+  ami_id              = var.ami_id
+  instance_type       = "t3.micro"
+  user_data           = file("${path.module}/userdata.sh")
+  private_subnet_ids  = data.terraform_remote_state.networking.outputs.private_subnet_ids
+  sg_ec2_id           = module.sg.ec2_id
+  target_group_arn    = module.alb.target_group_arn
+  desired_capacity    = 2
+  min_size            = 1
+  max_size            = 3
+  tags                = var.tags
+}
